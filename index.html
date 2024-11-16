@@ -1,0 +1,104 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="">
+
+    <meta property="og:title" content="POMOFREE">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:image:alt" content="">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">POMOFREE</a>
+
+            <!-- Toggler Button (for smaller screens) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto btn-group">
+                    <li class="nav-item btn btn-primary rounded m-2">
+                        <div class="py-0 mx-2">
+                        <a class="nav-link text-light" aria-current="page" href="#">Report</a>
+                        </div>
+                    </li>
+                    <li class="nav-item btn btn-primary rounded m-2">
+                        <div class="py-0 mx-2">
+                            <a class="nav-link text-light" aria-current="page" href="#">Settings</a>
+                        </div>
+                    </li>
+                    <li class="nav-item btn btn-primary rounded m-2">
+                        <div class="py-0 mx-2">
+                            <a class="nav-link text-light" aria-current="page" href="#">Sign In</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Add your site or application content here -->
+    <div class="container bg-light p-5 my-5 rounded">
+
+        <div class="btn-group d-flex justify-content-center mb-5">
+            <div id="pomo-button" class="btn btn-primary mx-2 rounded">Pomodoro</div>
+            <div id="short-break-button" class="btn btn-primary mx-2 rounded">Short Break</div>
+            <div id="long-break-button" class="btn btn-primary mx-2 rounded">Long Break</div>
+        </div>
+
+        <div class="container d-flex justify-content-center mb-5">
+            <div id="timer" class=" text-bg-light fs-1"></div>
+        </div>
+
+        <div class="container d-flex justify-content-center btn-group">
+            <div id="action-button" class="btn btn-primary fs-2">Start</div>
+        </div>
+
+    </div>
+
+    <div class="container bg-light p-1 my-5 rounded">
+        <div class="container d-flex justify-content-center">
+            <div>count: </div><div id="count">0</div>
+        </div>
+    </div>
+
+    <div class="container bg-light p-4 my-5 rounded">
+        <div class="clearfix">
+            <div class="fs-5 float-sm-start">Tasks</div>
+            <div class="btn btn-primary float-end">Options</div>
+        </div>
+        <hr>
+        <div id="task-list"></div>
+        <div id="add-new-task-button" class="container d-flex justify-content-center btn btn-primary py-3 fw-bold fs-5 dashed-inner-border">Add New Task</div>
+        </div>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/timer.jquery/0.7.0/timer.jquery.js"></script>
+<script src="js/app.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
