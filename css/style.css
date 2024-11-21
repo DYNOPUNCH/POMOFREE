@@ -2,6 +2,15 @@
     position: relative; /* Needed for pseudo-element positioning */
 }
 
+@font-face {
+    font-family: 'helvetica';
+    src: url('../helvetica-rounded.otf') format('opentype');
+}
+
+body {
+    font-family: 'helvetica', sans-serif;
+}
+
 .dashed-inner-border::before {
     content: "";
     position: absolute;

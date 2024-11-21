@@ -21,24 +21,33 @@
 
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#fafafa">
+
 </head>
 
 <body>
 
     <template id="task-form-template">
         <div class="overlay"></div>
-        <div class="floating-window">
-            <h2>Floating Window</h2>
-            <p>This is a floating window that stays on top of other content.</p>
+        <div class="floating-window" style="width: 600px;">
+            <h2 class=" pb-4">New Task</h2>
+            <div class="form-group  pb-5">
+                <label for="taskDescription" class="pb-3">Description</label>
+                <input type="email" class="form-control" id="taskDescription" aria-describedby="taskDescription" placeholder="Today I will...">
+            </div>
             <div>
-                <button id="form-close" type="submit" class="btn btn-primary">Close</button>
-                <button id="add-task" type="submit" class="btn btn-primary">Add Task</button>
+                <button id="add-task" type="submit" class="btn btn-primary w-25">Add Task</button>
+                <button id="form-close" type="submit" class="btn btn-primary w-25">Close</button>
             </div>
         </div>
     </template>
 
     <template id="task-template">
-        <div class="container d-flex justify-content-center bg-primary py-3 mb-3 fw-bold text-light fs-5 rounded">New Task</div>
+        <div class="task container position-relative bg-secondary py-3 my-4 fw-bold text-light fs-5 rounded text-center">
+            <button class="task-close btn btn-danger position-absolute end-0 top-0 m-0 h-100 text-light p-2 rounded-end-1 rounded-start-0" type="button"
+                    style="margin-left: 40px; width: 16px; height: 16px;" aria-label="Close">
+            </button>
+            <div class="task-description"></div>
+        </div>
     </template>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -78,7 +87,7 @@
     <div class="container bg-light p-5 my-5 rounded">
 
         <div class="btn-group d-flex justify-content-center mb-5">
-            <div id="pomo-button" class="btn btn-primary mx-2 rounded">Pomodoro</div>
+            <div id="pomodoro-button" class="btn btn-primary mx-2 rounded">Pomodoro</div>
             <div id="short-break-button" class="btn btn-primary mx-2 rounded">Short Break</div>
             <div id="long-break-button" class="btn btn-primary mx-2 rounded">Long Break</div>
         </div>
