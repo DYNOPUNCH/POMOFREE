@@ -41,12 +41,30 @@
         </div>
     </template>
 
+    <template id="popup-template">
+        <div class="popup bg-body-secondary position-absolute z-3 rounded p-2">
+            <div class="delete-tasks-button btn btn-danger p-2  fs-6">
+                Delete All Tasks
+            </div>
+        </div>
+    </template>
+
     <template id="task-template">
         <div class="task container position-relative bg-secondary py-3 my-4 fw-bold text-light fs-5 rounded text-center">
             <button class="task-close btn btn-danger position-absolute end-0 top-0 m-0 h-100 text-light p-2 rounded-end-1 rounded-start-0" type="button"
                     style="margin-left: 40px; width: 16px; height: 16px;" aria-label="Close">
             </button>
             <div class="task-description"></div>
+        </div>
+    </template>
+
+    <template id="settings-template">
+        <div>
+            <div class="overlay"></div>
+            <div class="floating-window" style="width: 600px;">
+                <h2 class=" pb-4">Settings</h2>
+
+            </div>
         </div>
     </template>
 
@@ -65,17 +83,7 @@
                 <ul class="navbar-nav ms-auto btn-group">
                     <li class="nav-item btn btn-primary rounded m-2">
                         <div class="py-0 mx-2">
-                        <a class="nav-link text-light" aria-current="page" href="#">Report</a>
-                        </div>
-                    </li>
-                    <li class="nav-item btn btn-primary rounded m-2">
-                        <div class="py-0 mx-2">
-                            <a class="nav-link text-light" aria-current="page" href="#">Settings</a>
-                        </div>
-                    </li>
-                    <li class="nav-item btn btn-primary rounded m-2">
-                        <div class="py-0 mx-2">
-                            <a class="nav-link text-light" aria-current="page" href="#">Sign In</a>
+                            <a id="settings-button" class="nav-link text-light" aria-current="page" href="#">Settings</a>
                         </div>
                     </li>
                 </ul>
@@ -113,7 +121,7 @@
     <div class="container bg-light p-4 my-5 rounded">
         <div class="clearfix">
             <div class="fs-5 float-sm-start">Tasks</div>
-            <div class="btn btn-primary float-end">Options</div>
+            <div id="options-button" class="btn btn-primary float-end">Options</div>
         </div>
         <hr>
         <div id="task-list"></div>
@@ -124,7 +132,6 @@
 
     <!-- element that holds the overlay form -->
     <div id="overlay-holder"></div>
-
 
     <!-- Load javascript -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
