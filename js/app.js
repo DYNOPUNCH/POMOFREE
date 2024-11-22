@@ -6,9 +6,29 @@ const settingsBlock = $('#settings-template').html();
 var time = '25m';
 var count = 0;
 
+function addCount()
+{
+    count++;
+    $('#count').html(count);
+}
+
+function restartClock()
+{
+    $('#action-button').html('Restart');
+    $("#timer").timer('reset');
+    $("#timer").timer('pause');
+}
+
 var _timer = $("#timer").timer({
     countdown: true,
-    duration: time
+    duration: time,
+    callback: function() {
+        let audio = $("audio")[1];
+        audio.play();
+
+        addCount();
+        restartClock();
+    }
 }).timer('pause');
 
 $('#add-new-task-button').on('click', function () {
@@ -22,7 +42,7 @@ $('#settings-button').on('click', function () {
 });
 
 // Event delegation for form buttons inside the overlay holder
-$('#overlay-holder').on('click', '#form-close', function () {
+$('#overlay-holder').on('click', '.form-close', function () {
     $('#overlay-holder').empty();
 });
 
@@ -61,12 +81,16 @@ $('#action-button').on('click', function () {
         $('#timer').timer('pause');
         $('#action-button').html("Resume");
         $('#action-button').data('state', 'paused');
+        let audio = $("audio")[0];
+        audio.play();
         return;
     }
     if ($('#action-button').data('state') === 'paused') {
         $('#timer').timer('resume');
         $('#action-button').html("Pause");
         $('#action-button').data('state', 'running');
+        let audio = $("audio")[0];
+        audio.play();
         return;
     }
 });
@@ -75,26 +99,63 @@ $('#action-button').on('click', function () {
 // This also holds the times for now
 // TODO: Make the times editable.
 $('#pomodoro-button').on('click', function () {
+
+    $('#action-button').html("Resume");
+    $('#action-button').data('state', 'paused');
+
     _timer.timer('remove');
     _timer = $("#timer").timer({
         countdown: true,
-        duration: '25m'
+        duration: '25m',
+        callback: function() {
+            let audio = $("audio")[1];
+            audio.play();
+
+            addCount();
+            restartClock();
+        }
     }).timer('pause');
 })
 
 $('#short-break-button').on('click', function () {
+
+    $('#action-button').html("Resume");
+    $('#action-button').data('state', 'paused');
+
     _timer.timer('remove');
     _timer = $("#timer").timer({
         countdown: true,
-        duration: '15m'
+        duration: '5s',
+        callback: function() {
+            let audio = $("audio")[1];
+            audio.play().catch(function(error) {
+                console.log("Error playing audio:", error);
+            });
+
+            addCount();
+            restartClock();
+        }
     }).timer('pause');
 })
 
 $('#long-break-button').on('click', function () {
+
+    $('#action-button').html("Resume");
+    $('#action-button').data('state', 'paused');
+
     _timer.timer('remove');
     _timer = $("#timer").timer({
         countdown: true,
-        duration: '5m'
+        duration: '15m',
+        callback: function() {
+            let audio = $("audio")[1];
+            audio.play().catch(function(error) {
+                console.log("Error playing audio:", error);
+            });
+
+            addCount();
+            restartClock();
+        }
     }).timer('pause');
 })
 

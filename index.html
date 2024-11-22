@@ -22,6 +22,9 @@
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#fafafa">
 
+    <audio src="audio/AUDIO_ClockSet.mp3"></audio>
+    <audio src="audio/AUDIO_TimeEnd.mp3"></audio>
+
 </head>
 
 <body>
@@ -36,7 +39,7 @@
             </div>
             <div>
                 <button id="add-task" type="submit" class="btn btn-primary w-25">Add Task</button>
-                <button id="form-close" type="submit" class="btn btn-primary w-25">Close</button>
+                <button type="submit" class="form-close btn btn-primary w-25">Close</button>
             </div>
         </div>
     </template>
@@ -63,7 +66,7 @@
             <div class="overlay"></div>
             <div class="floating-window" style="width: 600px;">
                 <h2 class=" pb-4">Settings</h2>
-
+                <button type="submit" class="form-close btn btn-primary w-25">Close</button>
             </div>
         </div>
     </template>
@@ -112,9 +115,9 @@
 
     </div>
 
-    <div class="container bg-light p-1 my-5 rounded">
+    <div class="container bg-light p-3 my-5 rounded">
         <div class="container d-flex justify-content-center">
-            <div>count: </div><div id="count">0</div>
+            <div>Count:&nbsp;</div><div id="count">0</div>
         </div>
     </div>
 
